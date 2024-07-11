@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제집&인강 추천 사이트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tabs {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background-color: #f1f1f1;
+            margin-right: 5px;
+        }
+
+        .tab.active {
+            background-color: #ffffff;
+            border-top: 2px solid #333;
+        }
+
+        .tab-content {
+            border: 1px solid #ccc;
+            padding: 20px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>문제집&인강 추천 사이트</h1>
+
+    <div class="tabs">
+        <div class="tab" data-tab="math12">수학 1,2</div>
+        <div class="tab" data-tab="english">영어</div>
+        <div class="tab" data-tab="korean">국어</div>
+        <div class="tab" data-tab="earthscience1">지구과학1</div>
+        <div class="tab" data-tab="ethics">생활과 윤리</div>
+        <div class="tab" data-tab="mathhigh">수 상/수 하</div>
+        <div class="tab" data-tab="chemistry1">화학1</div>
+        <div class="tab" data-tab="calculus">미적분</div>
+        <div class="tab" data-tab="politicslaw">정치와 법</div>
+        <div class="tab" data-tab="integratedscience">통합과학</div>
+        <div class="tab" data-tab="japanese">일본어</div>
+    </div>
+
+    <div id="math12" class="tab-content">
+        <p>유형: 마플시너지 쎈<br>
+        심화: 현우진 뉴런 인강 고쟁이<br>
+        개념: 메가스터디 장미리T '개념원리 SET UP'</p>
+    </div>
+
+    <div id="english" class="tab-content">
+        <p>유형: 자이스토리 고2~3 영어 독해 완성</p>
+    </div>
+
+    <div id="korean" class="tab-content">
+        <p>개념: 빠작 언어와 매체<br>
+        유형: 마더텅 국어 독서, 강민철의 기출분석 문학 인강<br>
+        심화: 인강민철</p>
+    </div>
+
+    <div id="earthscience1" class="tab-content">
+        <p>개념: 완자 고등 지구과학1, 완자 기출픽<br>
+        유형: 자이스토리 지구과학1</p>
+    </div>
+
+    <div id="ethics" class="tab-content">
+        <p>개념: 완자 생활과 윤리<br>
+        유형: 현자의 돌</p>
+    </div>
+
+    <div id="mathhigh" class="tab-content">
+        <p>개념: 정승제의 고1 수학 개념 끝장내기</p>
+    </div>
+
+    <div id="chemistry1" class="tab-content">
+        <p>개념: 완자<br>
+        유형: 자이스토리 화학1</p>
+    </div>
+
+    <div id="calculus" class="tab-content">
+        <p>개념: 시발점 미적분 상/하</p>
+    </div>
+
+    <div id="politicslaw" class="tab-content">
+        <p>개념: 메가스터디 최적T ‘최적 내신 열.끝.’</p>
+    </div>
+
+    <div id="integratedscience" class="tab-content">
+        <p>유형: 완자 기출PICK 고등 통합과학</p>
+    </div>
+
+    <div id="japanese" class="tab-content">
+        <p>개념: 우키우키 일본어, 한눈에 보인다 일본어 첫걸음<br>
+        유형: 해커스 일본어 첫걸음 떼고 한걸음 더, 해커스 일본어 첫걸음</p>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                contents.forEach(content => content.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
